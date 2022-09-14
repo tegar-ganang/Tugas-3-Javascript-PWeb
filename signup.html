@@ -1,0 +1,77 @@
+<html>  
+<head>  
+<title> Halaman Daftar</title>  
+</head>  
+<body align="center" style="background-color: #aaccd9 " >  
+    <h1> Buat Akun</h1>  
+    <table cellspacing="2" align="center" cellpadding="8" border="0">  
+        <tr><td> Nama</td>   
+        <td><input type="text" placeholder="Masukkan nama" id="n1"></td></tr>  
+        <tr><td>Email </td>  
+        <td><input type="text" placeholder="Masukkan email" id="e1"></td></tr>
+        <tr><td> Nomor HP</td>  
+        <td><input type="text" placeholder="Masukkan nomor hp" id="hp1"></td></tr> 
+        <tr><td>Instansi </td>  
+        <td><input type="text" placeholder="Masukkan instansi" id="i1"></td></tr>  
+        <tr><td> Buat Password</td>  
+        <td><input type="password" placeholder="Buat Password" id="p1"></td></tr>  
+        <tr><td>Konfirmasi Password</td>  
+        <td><input type="password" placeholder="Konfirmasi password" id="p2"></td></tr>  
+        <tr><td>  
+        <input color="#d2df1d" type="submit" value="Create" onClick="create_account()"/>  
+    </table>  
+<script type="text/javascript">  
+function create_account(){  
+    var n=document.getElementById("n1").value;  
+    var e=document.getElementById("e1").value;  
+    var hp=document.getElementById("hp1").value;
+    var i=document.getElementById("i2").value;
+    var p=document.getElementById("p1").value;  
+    var cp=document.getElementById("p2").value;  
+    var letters = /^[A-Za-z]+$/;  
+    var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    var number = /^[0-9]*$/ ;
+ 
+    if(n==''||e==''||hp==''||i==''||p==''||cp==''){  
+        alert("Masukkan semua detail secara benar");  
+    }  
+    else if(!letters.test(n))  
+    {  
+        alert('Nama tidak valid, harus berisi alphabet');  
+    }  
+    else if(!email_val.test(e))  
+    {  
+        alert('Format email tidak valid, masukkan email yang benar');  
+    }  
+    else if(!number.test(hp))  
+    {  
+        alert('Nomor telepon tidak valid, harus berisi angka');  
+    }
+    else if(p!=cp)  
+    {  
+        alert("Password tidak cocok");  
+    }  
+    else if(document.getElementById("p1").value.length > 12)  
+    {  
+        alert("Panjang password maksimum 12 karakter");  
+    }  
+    else if(document.getElementById("p1").value.length < 6)  
+    {  
+        alert("Panjang password minimum 6 karakter");  
+    }  
+    else if(document.getElementById("hp1").value.length > 13)  
+    {  
+        alert("Panjang nomor telepon maksimum 13 karakter");  
+    } 
+    else if(document.getElementById("hp1").value.length < 10)  
+    {  
+        alert("Panjang nomor telepon minimum 10 karakter");  
+    } 
+    else{  
+        alert("Akun anda sukses terbuat... Menuju laman JavaTpoint.com");  
+        window.location="https://www.javatpoint.com/";  
+    }  
+    }  
+</script>  
+</body>  
+</html>  

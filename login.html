@@ -1,0 +1,29 @@
+<html>  
+<head>  
+    <style>
+        .btn {
+            color: rgb(198, 172, 29);
+        }
+    </style>
+<title>Formulir Masuk</title>  
+</head>  
+<body align="center" style="background-color: #e9e7ae">  
+    <h3> Masuk </h3>  
+    <form form ="Login_form" onsubmit="submit_form()">  
+    <h4> Nama User</h4>   
+    <input type="text" placeholder="Masukkan id email"/>  
+    <h4> Kata Sandi</h4>  
+    <input type="password" placeholder="Masukkan kata sandi"/></br></br>  
+    <input type="submit" value="Login"/>  
+    <input class="btn" type="button" value="SignUp" onClick="create()"/>  
+</form>  
+<script type="text/javascript">  
+    function submit_form(){  
+        alert("Anda Berhasil masuk");  
+    }  
+    function create(){  
+        window.location="signup.html";  
+    }  
+</script>  
+</body>  
+</html>  
